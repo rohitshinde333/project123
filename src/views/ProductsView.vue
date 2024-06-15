@@ -53,7 +53,12 @@ export default {
         { id: 10, name: 'Multi Boxes Dhurrie', description: 'Price: 9000', image: '/multi_boxes_dhurries.jpg', category: 'Floor Coverings' },
         { id: 11, name: 'Hand Made Dhurrie Rug', description: 'Price: 7200', image: '/handmade_dhurri_ruggs.jpg', category: 'Floor Coverings' },
         { id: 12, name: 'Multi Color handloom carpet', description: 'Price: 5000', image:'/multi_color_handloom_carpet.jpg', category: 'Floor Coverings' },
-        
+        { id: 13, name: 'Small Stool', description: 'Price: 400', image: '/small_stool.jpg', category: 'Furniture' },
+        { id: 14, name: 'Zhula', description: 'Price: 1799', image: '/hangin_zhula.jpg', category: 'Furniture' },
+        { id: 15, name: 'Bamboo Cane Baby Table', description: 'Price: 2300', image: '/bamboo_cane_baby.jpeg', category: 'Furniture' },
+        { id: 16, name: 'Black Wood Chair', description: 'Price: 1000', image: '/chair.jpg', category: 'Furniture' },
+        { id: 17, name: 'Saree Handcrafted Womens', description: 'Price: 2708', image: '/yellow_saree.jpg', category: 'Women Accessories' },
+      
       ],
       isMobile: false,
     };
