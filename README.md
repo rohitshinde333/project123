@@ -1,7 +1,7 @@
 # Handmade Crafts
 
 Follow [this link](https://prismatic-pony-8c05b7.netlify.app/) for the project demo.
-
+Rohit Vishwas Shinde - 21610071 - rvshinde333@gmail.com
 ## Project Setup
 
 ```bash
@@ -58,13 +58,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### Mobile View
 ![Mobile View](/public/mobile_screenshot.jpg)
 
-## Compatibility
 
-The application has been tested and is compatible with various screen sizes and devices, ensuring a consistent user experience across different platforms.
-
-### How to Test
-
-To test the application on different devices, you can use the developer tools in your browser to simulate different screen sizes or view the application on actual devices.
-
----
 
