@@ -2,7 +2,7 @@ import Home from '@/views/HomeView.vue';
 import Products from '@/views/ProductsView.vue';
 import Contact from '@/views/ContactsView.vue';
 import About from '@/components/AppAbout.vue';
-import { createRouter, createWebHistory } from 'vue-router'; // Import createRouter and createWebHistory from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'; 
 
 
 const routes = [

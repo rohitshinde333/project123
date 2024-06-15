@@ -24,7 +24,6 @@ export default {
 </script>
 
 <style>
-/* Global styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -61,21 +60,21 @@ h2 {
 
 .whatsapp-icon {
   position: fixed;
-  bottom: 20px; /* Adjust as needed */
-  right: 20px; /* Adjust as needed */
-  z-index: 1000; /* Ensure it's above other content */
+  bottom: 20px; 
+  right: 20px; 
+  z-index: 1000; 
 }
 
 .whatsapp-icon img {
-  width: 50px; /* Adjust size as needed */
+  width: 50px; 
   height: auto;
-  border-radius: 50%; /* Rounded icon */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Add shadow for visibility */
-  transition: transform 0.3s ease; /* Optional: Add a hover effect */
+  border-radius: 50%; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+  transition: transform 0.3s ease; 
 }
 
 .whatsapp-icon img:hover {
-  transform: scale(1.1); /* Optional: Scale up on hover */
+  transform: scale(1.1); 
 }
 
 @media (max-width: 768px) {

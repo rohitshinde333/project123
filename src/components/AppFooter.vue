@@ -3,9 +3,9 @@
     <div class="container">
       <p>&copy; 2024 Handmade Crafts. All rights reserved.</p>
       <div class="social-links">
-        <a href="#">Facebook</a>
-        <a href="#">Instagram</a>
-        <a href="#">Twitter</a>
+        <a href="www.facebook.com">Facebook</a>
+        <a href="www.instagram.com">Instagram</a>
+        <a href="www.x.com">Twitter</a>
       </div>
     </div>
   </footer>
