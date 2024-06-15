@@ -1,6 +1,6 @@
 # Handmade Crafts
 
-Follow [this link](https://prismatic-pony-8c05b7.netlify.app/) for the project demo.
+Follow [this link](https://sparkly-cobbler-f655c5.netlify.app/) for the project demo.
 Rohit Vishwas Shinde - 21610071 - rvshinde333@gmail.com
 ## Project Setup
 
