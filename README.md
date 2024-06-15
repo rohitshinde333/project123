@@ -1,4 +1,5 @@
 # handmade-crafts
+Follow [this link](https://prismatic-pony-8c05b7.netlify.app/) for project demo 
 
 ## Project setup
 ```
