@@ -53,10 +53,10 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## Screenshots
 
 ### Laptop View
-![Laptop View](/handmade-crafts/public/laptop_screenshot.png)
+![Laptop View](/public/laptop_screenshot.png)
 
 ### Mobile View
-![Mobile View](/handmade-crafts/public/mobile_screenshot.jpg)
+![Mobile View](/public/mobile_screenshot.jpg)
 
 ## Compatibility
 
