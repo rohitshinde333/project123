@@ -10,9 +10,10 @@
           <li><router-link to="/about">About</router-link></li>
         </ul>
       </nav>
+      <!-- Search Bar -->
       <div class="search-bar">
-        <input type="text" v-model="searchQuery" @keyup.enter="search" placeholder="Search products..." />
-        <button @click="search">Search</button>
+        <input type="text" v-model="searchQuery" @keyup.enter="performSearch" placeholder="Search products..." />
+        <button @click="performSearch">Search</button>
       </div>
     </div>
   </header>
@@ -26,9 +27,11 @@ export default {
     };
   },
   methods: {
-    search() {
-      this.$router.push('/products?search=' + this.searchQuery)
-      this.searchQuery = '';
+    performSearch() {
+      if (this.searchQuery.trim() !== '') {
+        this.$router.push('/products?search=' + this.searchQuery.trim());
+        this.searchQuery = '';
+      }
     },
   },
 };

@@ -60,8 +60,8 @@ h2 {
 
 .whatsapp-icon {
   position: fixed;
-  bottom: 20px; 
-  right: 20px; 
+  bottom: 60px; 
+  right: 10px; 
   z-index: 1000; 
 }
 

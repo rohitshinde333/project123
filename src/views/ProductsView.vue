@@ -1,32 +1,43 @@
 <template>
   <div class="products">
     <h1 style="text-align: center; color: #007185;">Our Products</h1>
-    <div v-for="(products, category) in groupedProducts" :key="category" class="category-section">
-      <h2 style="color: #007185; font-size: larger;">{{ category }}</h2>
-      <div class="product-list-wrapper" v-if="!isMobile">
-        <button class="prev" @click="scrollLeft(category)">‹</button>
-        <div class="product-list" ref="productList" :data-category="category">
+    <template v-for="(products, category) in filteredProducts" :key="category">
+      <div v-if="products.length > 0" class="category-section">
+        <h2 style="color: #007185; font-size: larger;">{{ category }}</h2>
+        <div class="product-list-wrapper" v-if="!isMobile">
+          <button class="prev" @click="scrollLeft(category)">‹</button>
+          <div class="product-list" :data-category="category">
+            <div class="product-item" v-for="product in products" :key="product.id" @click="redirectToContact()">
+              <img :src="product.image" :alt="product.name" />
+              <h3>{{ product.name }}</h3>
+              <p>{{ product.description }}</p>
+            </div>
+          </div>
+          <button class="next" @click="scrollRight(category)">›</button>
+        </div>
+        <div class="product-list-mobile" v-else>
           <div class="product-item" v-for="product in products" :key="product.id" @click="redirectToContact()">
             <img :src="product.image" :alt="product.name" />
             <h3>{{ product.name }}</h3>
             <p>{{ product.description }}</p>
           </div>
         </div>
-        <button class="next" @click="scrollRight(category)">›</button>
       </div>
-      <div class="product-list-mobile" v-else>
-        <div class="product-item" v-for="product in products" :key="product.id" @click="redirectToContact()">
-          <img :src="product.image" :alt="product.name" />
-          <h3>{{ product.name }}</h3>
-          <p>{{ product.description }}</p>
-        </div>
-      </div>
+    </template>
+    
+    <div v-if="Object.keys(filteredProducts).every(key => filteredProducts[key].length === 0)">
+      <p style="text-align: center; margin-top: 2rem; font-size: xx-large;">No products found.</p>
+      <ContactsView />
     </div>
   </div>
 </template>
 
 <script>
+import ContactsView from './ContactsView.vue';
 export default {
+  components: {
+    ContactsView,
+  },
   data() {
     return {
       products: [
@@ -57,21 +68,32 @@ export default {
         return acc;
       }, {});
     },
+    filteredProducts() {
+      const searchQuery = this.$route.query.search;
+      if (!searchQuery) {
+        return this.groupedProducts;
+      } else {
+        const query = searchQuery.toLowerCase().trim();
+        const filtered = {};
+        for (const category in this.groupedProducts) {
+          filtered[category] = this.groupedProducts[category].filter(product =>
+            product.name.toLowerCase().includes(query) || product.description.toLowerCase().includes(query)
+          );
+        }
+        return filtered;
+      }
+    },
   },
   methods: {
     redirectToContact() {
       this.$router.push('/contact');
     },
     scrollLeft(category) {
-      const productList = this.$refs.productList.find(
-        (el) => el.dataset.category === category
-      );
+      const productList = this.$refs.productList.find(el => el.dataset.category === category);
       productList.scrollBy({ left: -300, behavior: 'smooth' });
     },
     scrollRight(category) {
-      const productList = this.$refs.productList.find(
-        (el) => el.dataset.category === category
-      );
+      const productList = this.$refs.productList.find(el => el.dataset.category === category);
       productList.scrollBy({ left: 300, behavior: 'smooth' });
     },
     checkIsMobile() {
@@ -87,6 +109,7 @@ export default {
   },
 };
 </script>
+
 
 <style scoped>
 .products {
