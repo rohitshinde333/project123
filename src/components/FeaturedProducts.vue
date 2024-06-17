@@ -10,10 +10,10 @@
       <button class="next" @click="nextSlide">›</button>
     </div>
 
-    <div class="featured-products" @click="redirectToContact()">
+    <div class="featured-products">
       <h2 style="color: #007185;">Featured Products</h2>
       <div class="product-list" :class="{ 'product-list-mobile': isMobile }">
-        <div class="product-item" v-for="product in featuredProducts" :key="product.id">
+        <div class="product-item" v-for="product in featuredProducts" :key="product.id" @click="redirectToContact()">
           <img :src="product.image" :alt="product.name" />
           <h3>{{ product.name }}</h3>
           <p>{{ product.description }}</p>
