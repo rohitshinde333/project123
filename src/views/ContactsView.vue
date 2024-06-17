@@ -107,8 +107,6 @@ button:hover {
   margin-bottom: 1rem;
 }
 
-
-
 @media (max-width: 768px) {
   .contact {
     padding: 1.5rem;

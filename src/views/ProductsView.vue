@@ -1,9 +1,9 @@
 <template>
   <div class="products">
-    <h1 style="text-align: center; color: #007185;">Our Products</h1>
+    <h1 style="text-align: center; color: #007185;">Products</h1>
     <template v-for="(products, category) in filteredProducts" :key="category">
       <div v-if="products.length > 0" class="category-section">
-        <h2 style="color: #007185; font-size: larger;">{{ category }}</h2>
+        <h2 style="color: #007185; font-size: larger; text-align: center;">{{ category }}</h2>
         <div class="product-list-wrapper" v-if="!isMobile">
           <button class="prev" @click="scrollLeft(category)">‹</button>
           <div class="product-list" :data-category="category">
@@ -44,21 +44,32 @@ export default {
         { id: 1, name: 'Sujani Handcrafted Cushion Cover', description: 'Price: 400', image: '/chanderi_saree.jpg', category: 'Summerfest Collection' },
         { id: 2, name: 'Amair Suit', description: 'Price: 4000', image: '/amaira_suit.jpg', category: 'Summerfest Collection' },
         { id: 3, name: 'Handloom Cotton Printed Dress', description: 'Price: 1799', image: '/handloom_dress.jpeg', category: 'Summerfest Collection' },
-        { id: 4, name: 'Jharcraft Cotton For Mens Kurta', description: 'Price: 1708', image: '/jharcraft_cotton_kurta.jpg', category: 'Summerfest Collection' },
-        { id: 5, name: 'Handloom Cotton Printed Dress', description: 'Price: 1799', image: '/handcrafted_bamboo_earings.jpg', category: 'Women Accessories' },
-        { id: 6, name: 'Aapan Kala Neclace Earing Set', description: 'Price: 1708', image: '/necklace_earring.jpeg', category: 'Women Accessories' },
-        { id: 7, name: 'Blue Agate Gemstone Earing Set', description: 'Price: 999', image: '/blue_agate_gemstone.jpg', category: 'Women Accessories' },
-        { id: 8, name: 'Aapan Kala tricolour necklace with Earings', description: 'Price: 759', image: '/aapan_kala.jpeg', category: 'Women Accessories' },
-        { id: 9, name: 'Kilim Dhurries', description: 'Price: 6800', image: '/kilim_durries.jpg', category: 'Floor Coverings' },
-        { id: 10, name: 'Multi Boxes Dhurrie', description: 'Price: 9000', image: '/multi_boxes_dhurries.jpg', category: 'Floor Coverings' },
-        { id: 11, name: 'Hand Made Dhurrie Rug', description: 'Price: 7200', image: '/handmade_dhurri_ruggs.jpg', category: 'Floor Coverings' },
-        { id: 12, name: 'Multi Color handloom carpet', description: 'Price: 5000', image:'/multi_color_handloom_carpet.jpg', category: 'Floor Coverings' },
-        { id: 13, name: 'Small Stool', description: 'Price: 400', image: '/small_stool.jpg', category: 'Furniture' },
-        { id: 14, name: 'Zhula', description: 'Price: 1799', image: '/hangin_zhula.jpg', category: 'Furniture' },
-        { id: 15, name: 'Bamboo Cane Baby Table', description: 'Price: 2300', image: '/bamboo_cane_baby.jpeg', category: 'Furniture' },
-        { id: 16, name: 'Black Wood Chair', description: 'Price: 1000', image: '/chair.jpg', category: 'Furniture' },
-        { id: 17, name: 'Saree Handcrafted Womens', description: 'Price: 2708', image: '/yellow_saree.jpg', category: 'Women Accessories' },
-      
+        { id: 4, name: 'black Strip Womens', description: 'Price: 1758', image: '/black_strip_western.jpeg', category: 'Summerfest Collection' },
+        { id: 5, name: 'handloom women shrug', description: 'Price: 400', image: '/handloom_women_shrug.jpeg', category: 'Summerfest Collection' },
+        { id: 6, name: 'house coat', description: 'Price: 4000', image: '/house_coat.jpeg', category: 'Summerfest Collection' },
+        { id: 7, name: 'Pink Summer Dress', description: 'Price: 1799', image: '/pink_summer_dress.jpg', category: 'Summerfest Collection' },
+        { id: 8, name: 'Jharcraft Cotton For Mens Kurta', description: 'Price: 1708', image: '/jharcraft_cotton_kurta.jpg', category: 'Summerfest Collection' },
+        { id: 9, name: 'Handloom Cotton Printed Dress', description: 'Price: 1799', image: '/handcrafted_bamboo_earings.jpg', category: 'Women Accessories' },
+        { id: 10, name: 'Aapan Kala Neclace Earing Set', description: 'Price: 1708', image: '/necklace_earring.jpeg', category: 'Women Accessories' },
+        { id: 11, name: 'Blue Agate Gemstone Earing Set', description: 'Price: 999', image: '/blue_agate_gemstone.jpg', category: 'Women Accessories' },
+        { id: 12, name: 'Aapan Kala tricolour necklace with Earings', description: 'Price: 759', image: '/aapan_kala.jpeg', category: 'Women Accessories' },
+        { id: 13, name: 'Kilim Dhurries', description: 'Price: 6800', image: '/kilim_durries.jpg', category: 'Floor Coverings' },
+        { id: 14, name: 'Multi Boxes Dhurrie', description: 'Price: 9000', image: '/multi_boxes_dhurries.jpg', category: 'Floor Coverings' },
+        { id: 15, name: 'Hand Made Dhurrie Rug', description: 'Price: 7200', image: '/handmade_dhurri_ruggs.jpg', category: 'Floor Coverings' },
+        { id: 16, name: 'Multi Color handloom carpet', description: 'Price: 5000', image:'/multi_color_handloom_carpet.jpg', category: 'Floor Coverings' },
+        { id: 17, name: 'Kilim Dhurries', description: 'Price: 6800', image: '/kilim_durries.jpg', category: 'Floor Coverings' },
+        { id: 18, name: 'Multi Boxes Dhurrie', description: 'Price: 9000', image: '/multi_boxes_dhurries.jpg', category: 'Floor Coverings' },
+        { id: 19, name: 'Hand Made Dhurrie Rug', description: 'Price: 7200', image: '/handmade_dhurri_ruggs.jpg', category: 'Floor Coverings' },
+        { id: 20, name: 'Multi Color handloom carpet', description: 'Price: 5000', image:'/multi_color_handloom_carpet.jpg', category: 'Floor Coverings' },
+        { id: 21, name: 'Small Stool', description: 'Price: 400', image: '/small_stool.jpg', category: 'Furniture' },
+        { id: 22, name: 'Zhula', description: 'Price: 1799', image: '/hangin_zhula.jpg', category: 'Furniture' },
+        { id: 23, name: 'Bamboo Cane Baby Table', description: 'Price: 2300', image: '/bamboo_cane_baby.jpeg', category: 'Furniture' },
+        { id: 24, name: 'Black Wood Chair', description: 'Price: 1000', image: '/chair.jpg', category: 'Furniture' },
+        { id: 25, name: 'Saree Handcrafted Womens', description: 'Price: 2708', image: '/yellow_saree.jpg', category: 'Women Accessories' },
+        { id: 26, name: 'Zhula', description: 'Price: 1799', image: '/hangin_zhula.jpg', category: 'Furniture' },
+        { id: 27, name: 'Bamboo Cane Baby Table', description: 'Price: 2300', image: '/bamboo_cane_baby.jpeg', category: 'Furniture' },
+        { id: 28, name: 'Black Wood Chair', description: 'Price: 1000', image: '/chair.jpg', category: 'Furniture' },
+        { id: 29, name: 'Saree Handcrafted Womens', description: 'Price: 2708', image: '/yellow_saree.jpg', category: 'Women Accessories' },
       ],
       isMobile: false,
     };
@@ -94,12 +105,18 @@ export default {
       this.$router.push('/contact');
     },
     scrollLeft(category) {
-      const productList = this.$refs.productList.find(el => el.dataset.category === category);
-      productList.scrollBy({ left: -300, behavior: 'smooth' });
+      const productList = document.querySelector(`.product-list[data-category="${category}"]`);
+      productList.scrollBy({
+        left: -productList.offsetWidth,
+        behavior: 'smooth',
+      });
     },
     scrollRight(category) {
-      const productList = this.$refs.productList.find(el => el.dataset.category === category);
-      productList.scrollBy({ left: 300, behavior: 'smooth' });
+      const productList = document.querySelector(`.product-list[data-category="${category}"]`);
+      productList.scrollBy({
+        left: productList.offsetWidth,
+        behavior: 'smooth',
+      });
     },
     checkIsMobile() {
       this.isMobile = window.innerWidth <= 768;
@@ -140,19 +157,19 @@ export default {
 
 .product-item {
   background-color: white;
-  padding: 0.2rem;
-  border-radius: 8px;
+  padding: 0rem;
+  border-radius: 30px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  width: 13rem;
   box-sizing: border-box;
   text-align: center;
   flex: 0 0 auto;
 }
 
 .product-item img {
-  width: 100%;
+  width: 13rem;
   height: 13rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
 }
 
 .product-item img:hover{
@@ -172,19 +189,27 @@ button {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-left: -1.5rem;
+  margin-left: 0rem;
 }
 
 @media (max-width: 768px) {
   .product-item {
-    min-width: 150px;
+    min-width: 13rem;
+    align-items: center;
+    align-self: center;
+
   }
 }
 
 @media (max-width: 480px) {
   .product-item {
-    min-width: 120px;
-    padding: 0.5rem;
+    width: 14rem;
+    padding: 0rem;
+    align-self: center;
+  }
+  .product-item img{
+    width: 14rem;
+    height: 14rem;
   }
 }
 </style>

@@ -36,7 +36,6 @@
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin: 0rem 0;
-  animation: fadeIn 1s ease-in-out;
 }
 
 .about-header {
@@ -105,15 +104,6 @@
 
 .about-section:hover {
   background-color: #f1f1f1;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 @media (max-width: 768px) {
