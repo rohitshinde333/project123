@@ -1,8 +1,16 @@
 <template>
   <div class="products">
     <h1 style="text-align: center; color: #007185;">Products</h1>
+    
+    <div class="category-dropdown" v-if="Object.keys(groupedProducts).length > 0">
+      <select v-model="selectedCategory" @change="scrollToCategory">
+        <option value="" disabled selected>Select a Category</option>
+        <option v-for="category in Object.keys(groupedProducts)" :key="category" :value="category">{{ category }}</option>
+      </select>
+    </div>
+
     <template v-for="(products, category) in filteredProducts" :key="category">
-      <div v-if="products.length > 0" class="category-section">
+      <div v-if="products.length > 0" :id="categoryToId(category)" class="category-section">
         <h2 style="color: #007185; font-size: larger; text-align: center;">{{ category }}</h2>
         <div class="product-list-wrapper" v-if="!isMobile">
           <button class="prev" @click="scrollLeft(category)">‹</button>
@@ -24,7 +32,7 @@
         </div>
       </div>
     </template>
-    
+
     <div v-if="Object.keys(filteredProducts).every(key => filteredProducts[key].length === 0)">
       <p style="text-align: center; margin-top: 2rem; font-size: xx-large;">No products found.</p>
       <ContactsView />
@@ -34,6 +42,7 @@
 
 <script>
 import ContactsView from './ContactsView.vue';
+
 export default {
   components: {
     ContactsView,
@@ -69,9 +78,9 @@ export default {
         { id: 26, name: 'Zhula', description: 'Price: 1799', image: '/hangin_zhula.jpg', category: 'Furniture' },
         { id: 27, name: 'Bamboo Cane Baby Table', description: 'Price: 2300', image: '/bamboo_cane_baby.jpeg', category: 'Furniture' },
         { id: 28, name: 'Black Wood Chair', description: 'Price: 1000', image: '/chair.jpg', category: 'Furniture' },
-        { id: 29, name: 'Saree Handcrafted Womens', description: 'Price: 2708', image: '/yellow_saree.jpg', category: 'Women Accessories' },
       ],
       isMobile: false,
+      selectedCategory: '',
     };
   },
   computed: {
@@ -121,6 +130,18 @@ export default {
     checkIsMobile() {
       this.isMobile = window.innerWidth <= 768;
     },
+    categoryToId(category) {
+      return category.replace(/\s+/g, '-').toLowerCase();
+    },
+    scrollToCategory() {
+      if (this.selectedCategory) {
+        const categoryId = this.categoryToId(this.selectedCategory);
+        const categoryElement = document.getElementById(categoryId);
+        if (categoryElement) {
+          categoryElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    },
   },
   mounted() {
     this.checkIsMobile();
@@ -132,10 +153,21 @@ export default {
 };
 </script>
 
-
 <style scoped>
 .products {
   padding: 2rem;
+}
+
+.category-dropdown {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.category-dropdown select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #007185;
 }
 
 .category-section {
@@ -172,7 +204,7 @@ export default {
   margin-bottom: 0rem;
 }
 
-.product-item img:hover{
+.product-item img:hover {
   transform: scale(1.05);
 }
 
@@ -197,7 +229,6 @@ button {
     min-width: 13rem;
     align-items: center;
     align-self: center;
-
   }
 }
 
@@ -207,7 +238,7 @@ button {
     padding: 0rem;
     align-self: center;
   }
-  .product-item img{
+  .product-item img {
     width: 14rem;
     height: 14rem;
   }
